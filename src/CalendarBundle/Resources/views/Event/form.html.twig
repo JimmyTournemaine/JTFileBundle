@@ -1,0 +1,8 @@
+
+    {{ form_start(form, {'action': path('calendar_event_new')}) }}
+	    {{ form_widget(form) }}
+		<div id="form_controls" class="form-group">
+			<button id="cancel" class="btn btn-default" type="button">{{ 'calendar.new.close'|trans }}</button>
+			<input type="submit" class="btn btn-primary" value="{{ 'calendar.new.submit'|trans }}"/>
+		</div>
+    {{ form_end(form) }}

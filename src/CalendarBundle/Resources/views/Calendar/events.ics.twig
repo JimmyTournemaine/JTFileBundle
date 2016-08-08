@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+{% for event in events %}UID:uid{{ event.id }}@thesimplecrm.net
+BEGIN:VEVENT
+{% if event.allDay %}DTSTART:{{ event.start|date('Ymd') }}
+{% else %}DTSTART:{{ event.start|date('Ymd\\THsi') }}
+DTEND:{{ event.end|date('Ymd\\THsi') }}
+{% endif %}SUMMARY:{{ event.title }}
+DESCRIPTION:{{ event.description }}
+URL:{{ url('calendar') }}
+END:VEVENT
+{% endfor %}END:VCALENDAR

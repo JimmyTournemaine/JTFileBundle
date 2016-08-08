@@ -1,0 +1,7 @@
+
+    <h2>{{ 'team.new.title'|trans }}</h2>
+
+    {{ form_start(form, {'action': path('team_new')}) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="{{ 'team.new.submit'|trans }}" />
+    {{ form_end(form) }}

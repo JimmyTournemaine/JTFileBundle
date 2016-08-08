@@ -1,0 +1,6 @@
+services:
+    task.form:
+        class: TaskBundle\Form\TaskType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type }

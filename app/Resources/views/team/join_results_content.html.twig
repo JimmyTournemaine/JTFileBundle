@@ -1,0 +1,22 @@
+	<table id="team_search_results_table">
+		<thead>
+			<tr>
+				<th>{{ 'team.join.name'|trans }}</th>
+				<th>{{ 'team.join.admins'|trans }}</th>
+        <tbody>
+        {% for team in teams %}
+            <tr>
+                <td><a href="{{ path('invitation_by_user', {'slug': team.slug }) }}">{{ team.name }}</a></td>
+                <td>
+                	{% for admin in team.admins %}
+                		{{ admin.username }}{% if not loop.last %}, {% endif %}
+                	{% endfor %}
+                </td>
+            </tr>
+        {% else %}
+        	<tr>
+                <td>{{ 'team.join.none'|trans }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>

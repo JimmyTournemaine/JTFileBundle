@@ -1,0 +1,44 @@
+services:
+    app.archive:
+        class: AppBundle\Service\Archive
+        arguments: ["@doctrine.orm.entity_manager", "@templating", "%archive_dir%"]
+        
+    app.mailer:
+        class: AppBundle\Mailer\Mailer
+        arguments: ["@mailer", "@templating", "%from_email%", "%from_name%"]
+        
+    app.google.contacts.list:
+        class: AppBundle\Service\GoogleContactRetriever
+        arguments: ["@user_oauth_aware.user_provider", "@security.token_storage", 25]
+        
+    app.google_token_invalid_exception_listener:
+        class: AppBundle\Listener\GoogleTokenInvalidExceptionListener
+        arguments: [ "@templating" ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+            
+    app.form.contact:
+        class: AppBundle\Form\ContactType
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: form.type }
+            
+    app.flashify:
+        class: AppBundle\Service\Flashify
+            
+    app.twig_extension:
+        class: AppBundle\Twig\AppExtension
+        public: false
+        arguments: ["@app.flashify"]
+        tags:
+            - { name: twig.extension }
+        
+    app.beta_html:
+        class: AppBundle\Service\BetaHTML
+        arguments: ["@app.flashify", "@translator"]
+        
+    app.beta_listener:
+        class: AppBundle\Listener\BetaListener
+        arguments: ["@app.beta_html", "%beta_end%"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: processBeta }

@@ -1,0 +1,35 @@
+#google-connect {
+	display: block;
+	text-align: right;
+	background: #FFFFFF url(../img/google_light.svg) left center no-repeat ;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	-moz-box-shadow: 2px 2px 5px 0px #656565;
+	-webkit-box-shadow: 2px 2px 5px 0px #656565;
+	-o-box-shadow: 2px 2px 5px 0px #656565;
+	box-shadow: 2px 2px 5px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=5);
+	font-size: 1.1em;
+	color: black;
+}
+
+#google-connect:focus, #google-connect:hover {
+	text-decoration: none;
+}
+
+#login_content {
+	width: 60%;
+	margin: 20px auto;
+}
+
+.popover{
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+}

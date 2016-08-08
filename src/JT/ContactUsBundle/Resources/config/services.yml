@@ -1,0 +1,11 @@
+services:
+    jt_contact_us.form.subscriber.contact:
+        class: JT\ContactUsBundle\Form\Subscriber\AddEmailSubscriber
+        arguments: ["@security.token_storage", "@security.authorization_checker", "%jt_contact_us.email_property%", "%jt_contact_us.extra_properties%"]
+        
+    
+    jt_contact_us.form.type.contact:
+        class: JT\ContactUsBundle\Form\Type\ContactType
+        arguments: ["@jt_contact_us.form.subscriber.contact"]
+        tags:
+            - { name: form.type }

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Company</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ company.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ company.name }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ company.address }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ company.phone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ company.email }}</td>
+            </tr>
+            <tr>
+                <th>Facebook</th>
+                <td><a href="https://www.facebook.com/{{ company.facebook }}">Facebook</a></td>
+            </tr>
+            <tr>
+                <th>Instagram</th>
+                <td><a href="https://www.instagram.com/{{ company.instagram }}">Instagram</td>
+            </tr>
+            <tr>
+                <th>Linkedin</th>
+                <td><a href="https://www.linkedin.com/company/{{ company.linkedin }}">LinkedIn</td>
+            </tr>
+            <tr>
+                <th>Twitter</th>
+                <td><a href="https://twitter.com/{{ company.twitter }}">Twitter</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('company_edit', { 'id': company.id }) }}">Edit</a>
+        </li>
+    </ul>
+{% endblock %}

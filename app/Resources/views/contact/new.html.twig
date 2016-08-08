@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'contact.new.title'|trans }}{% endblock %}
+{% block body %}
+  <div id="contact_creation">
+    <h1>{% block content_title %}{{ 'contact.new.title'|trans }}{% endblock %}</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <a id="company_new_button">{{ 'contact.new.add_company'|trans }}</a>
+        <input type="submit" value="{{ 'contact.new.form.submit'|trans }}" />
+    {{ form_end(form) }}
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ googleApiKey }}&libraries=places"></script>
+	{% javascripts '@jquery' '@jquery_ui' '@translator' 
+		'@AppBundle/Resources/public/js/company_new.js'
+		'@AppBundle/Resources/public/js/contact_new.js' %}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets '@jquery_ui_css' filter='cssrewrite' %}
+		<link rel="stylesheet" href="{{ asset_url }}"/>
+	{% endstylesheets %}
+{% endblock %}

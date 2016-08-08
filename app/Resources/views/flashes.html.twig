@@ -1,0 +1,15 @@
+{% macro print(tab) %}
+	{% set icons = {'success': 'ok-sign', 'warning': 'warning-sign', 'danger': 'remove-sign', 'info': 'info-sign', 'notice': 'info-sign'} %}
+	{% for label, flashes in tab %}
+	    {% for flash in flashes %}
+	    	<div class="alert alert-{{ label }} alert-dismissible" role="alert">
+	    		<i class="glyphicon glyphicon-{{ icons[label] }}" aria-hidden="true"></i>
+	    		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+	    		{{ flash }}
+			</div>
+	    {% endfor %}
+	{% endfor %}
+	{% set label = 'danger' %}
+{% endmacro %}

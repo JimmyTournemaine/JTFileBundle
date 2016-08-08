@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ project_name }}{% endblock %}
+
+{% block container %}
+	<header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"><h1>Grow your business with <br/> The Simple Crm</h1>
+                </div>
+                <div class="intro-heading"><h2>Your partner in success</h2>
+                </div>
+                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-xl">Get started</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="feature-box">
+                        <i class="fa fa-4x fa-tasks text-primary sr-icons"></i>
+                        <h3>Manage your workflow</h3>
+                        <p class="text-muted">Organize your work.</p>
+                        <a href="#register" class="btn btn-default btn-xl sr-button"> See more </a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="feature-box">
+                        <i class="fa fa-4x fa-signal text-primary sr-icons"></i>
+                        <h3>Analytics & insights</h3>
+                        <p class="text-muted">Keep a track of your work and analyse it.</p>
+                        <a href="#register" class="btn btn-default btn-xl sr-button"> See more </a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="feature-box">
+                        <i class="fa fa-4x fa-calendar text-primary sr-icons"></i>
+                        <h3>Organize your deadlines</h3>
+                        <p class="text-muted">Scheduling is a priority.</p>
+                        <a href="#register" class="btn btn-default btn-xl sr-button"> See more </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="browser">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 class="section-subheading">All you need is a browser</h3>
+                    <p>Stop your procrastination, get back to work and organise it to make it better.</p>
+                    <p>To use The Simple Crm, you don't need to be a pro of CRMs, working with a big team in a rich company!</p>
+                    <p>Our onboarding is VERY simple.</p>
+                    <p>The Simple Crm is the best solution for new companies, startups, associations or student projects!</p>
+                    <div class="row">
+                        <i class="glyphicon glyphicon-ok-sign text-primary col-xs-1"></i>
+                        <p class="text-primary col-xs-11">Everything is linked with your goole account, to simplify your work</p>
+                    </div>
+                    <div class="row">
+                        <i class="glyphicon glyphicon-ok-sign text-primary col-xs-1"></i>
+                        <p class="text-primary col-xs-11">You have no comitment, you can leave whenever you want</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ asset('img/responsive-mockup.png') }}" class="img-responsive" alt="Captures d'écran the simple crm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="conrainer text-center">
+            <h1>Our pricing</h1>
+            <h2>FREE !</h2>
+            <p>The Simple Crm is a student project made by Jimmy Tournemaine and Raphaël Guigo, and used by them.</p>
+            <p>Be the first to get registered, join us for free! :)</p>
+            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-xl">Join now!</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container text-center">
+            <h1 class="contact-heading">Contact</h1>
+            <h2>Need an information? A question? A suggestion?</h2>
+            <h2>Feel free to contact us!</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <img src="{{ asset('img/raphael.png') }}" class="img-responsive img-circle" alt="Raphaël - The Simple Crm">
+                        <h4>Raphaël Guigo</h4>
+                        <h5>CEO</h5>
+                        <p><a href="raphael.guigo@thesimplecrm.net">raphael.guigo@thesimplecrm.net</a></p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://twitter.com/guigo_raphael"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/raphael.guigo"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/raphaelguigo"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <img src="{{ asset('img/jimmy.png') }}" class="img-responsive img-circle" alt="Jimmy - The Simple Crm">
+                        <h4>Jimmy tournemaine</h4>
+                        <h5>CTO</h5>
+                        <p><a href="mailto:jimmy.tournemaine@thesimplecrm.net">jimmy.tournemaine@thesimplecrm.net</a></p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/DJiLegacy"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/jimdeplouz?fref=ts"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/jimmy-tournemaine-b208b3bb"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'company.new.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'company.new.title'|trans }}</h1>
+
+	{{ include('company/new_content.html.twig') }}
+{% endblock %}
+
+{% block javascripts %}
+	<script src="https://maps.googleapis.com/maps/api/js?key={{ googleApiKey }}&libraries=places"></script>
+	{% javascripts '@jquery' '@AppBundle/Resources/public/js/company_new.js' %}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	<script>onCompanyFormLoadingComplete()</script>
+{% endblock %}

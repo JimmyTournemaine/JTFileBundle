@@ -1,0 +1,13 @@
+services:
+
+    calendar.calendar_listener:
+        class: CalendarBundle\EventListener\CalendarEventListener
+        arguments: ["@doctrine.orm.entity_manager", "@security.token_storage", "@router"]
+        tags:
+            - { name: kernel.event_listener, event: calendar.load_events, method: "loadEvents" }
+            
+    calendar.form.event:
+        class: CalendarBundle\Form\EventType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: calendar_event }

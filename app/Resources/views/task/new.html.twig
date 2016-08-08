@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'task.new.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'task.new.title'|trans }}</h1>
+
+	{{ include('task/new_content.html.twig') }}
+{% endblock %}

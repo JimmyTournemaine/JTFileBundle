@@ -1,0 +1,7 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+    archive_dir: "%kernel.root_dir%/../web/archives"
+    from_email: services@thesimplecrm.net
+    from_name:  The Simple CRM Team
+    beta_end: "2016-09-01"

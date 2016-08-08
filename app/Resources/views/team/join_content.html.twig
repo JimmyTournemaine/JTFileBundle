@@ -1,0 +1,7 @@
+
+    <h2>{{ 'team.join.title'|trans }}</h2>
+
+    {{ form_start(form, {'name': 'team_search_form', 'action': path('team_join')}) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="{{ 'team.join.submit'|trans }}" />
+    {{ form_end(form) }}

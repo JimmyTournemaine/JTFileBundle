@@ -1,0 +1,13 @@
+JT\ContactUsBundle\Model\Contact:
+    properties:
+        email:
+            - NotBlank: ~
+            - Email: ~
+        subject:
+            - NotBlank: ~
+            - Length:
+                max: 78
+        content:
+            - NotBlank: ~
+            - Length:
+                min: 20

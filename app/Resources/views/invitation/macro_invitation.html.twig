@@ -1,0 +1,29 @@
+{# 'team' = Team Request || 'user' = User Request #}  
+{% macro invitation(invitation, type) %}
+	<tr>
+		{% if type == 'user' %}
+    		<td>{{ invitation.team.name }}</td>
+    	{% elseif type == 'team' %}
+    		<td>{{ invitation.user.username }}</td>
+    	{% endif %}
+        <td>
+          	{% if invitation.status is null %}
+          		{{ 'invitation.index.status.sent'|trans }}
+           	{% elseif invitation.status %}
+           		{{ 'invitation.index.status.accepted'|trans }}
+           	{% else %}
+           		{{ 'invitation.index.status.declined'|trans }}
+           	{% endif %}
+        </td>
+        <td>
+        	{% if invitation.status is null %}
+	           	{% if (type == 'user' and invitation.isTeamRequest()) or (type == 'team' and invitation.isUserRequest()) %}
+			   		<a href="{{ path('invitation_accept', {'id': invitation.id}) }}">{{ 'team.index.invitations.accept'|trans }}</a>
+			   		<a href="{{ path('invitation_decline', {'id': invitation.id}) }}">{{ 'team.index.invitations.decline'|trans }}</a>
+			   	{% else %}
+			   		<a href="{{ path('invitation_delete', {'id': invitation.id}) }}">{{ 'team.index.invitations.delete'|trans }}</a>
+			  	{% endif %}
+			{% endif %}
+    	</td>
+	</tr>
+{% endmacro %}

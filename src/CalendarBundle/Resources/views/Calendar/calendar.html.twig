@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'calendar.title'|trans }}{% endblock %}
+{% block body %}
+	{{ include('ADesignsCalendarBundle::calendar.html.twig') }}
+	<div id="create_form">{{ include('CalendarBundle:Event:form.html.twig') }}</div>
+{% endblock %}
+{% block javascripts %}
+	{% javascripts '@calendar' '@bootstrap' '@translator' '@CalendarBundle/Resources/public/js/calendar.js' '@CalendarBundle/Resources/public/js/jquery-ui-datepicker.min.js' %}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	<script src="{{ asset('bundles/calendar/lang/'~ app.request.locale|lower ~'.js') }}"></script>
+</script>
+{% endblock %}
+{% block stylesheets %}
+	{% stylesheets '@calendar_css' '@jquery_ui_css' filter='cssrewrite' %}
+		<link rel="stylesheet" href="{{ asset_url }}"/>
+	{% endstylesheets %}
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<style>#create_form { display: none } .popover { max-width: 100% }</style>
+{% endblock %}

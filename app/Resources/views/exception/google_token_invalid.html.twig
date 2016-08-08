@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ 'exception.google_token_invalid.title'|trans }}{% endblock %}
+{% block body %}
+	<h1>{{ 'exception.google_token_invalid.title'|trans }}</h1>
+	<p>{{ 'exception.google_token_invalid.description'|trans }}</p>
+	<p><a href="{{ path('fos_user_security_logout') }}">{{ 'exception.google_token_invalid.continue'|trans }}</a></p>
+{% endblock %}

@@ -1,0 +1,4 @@
+{{ form_start(form, {'action': path('task_new')}) }}
+    {{ form_widget(form) }}
+    <input id="task_submit" type="submit" value="{{ 'task.new.submit' }}" />
+{{ form_end(form) }}

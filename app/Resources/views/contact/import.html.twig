@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'contact.import.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'contact.import.title'|trans }}</h1>
+
+	<div id="contacts_import">
+		    <ul id="contacts_list">
+				{{ include('contact/import_list.html.twig') }}
+		    </ul>
+		    <div id="controls">
+		    	<button id="add">
+		    		<i class="fa fa-angle-right" aria-hidden="true"></i>
+		    		<span class="sr-only">&gt;</span>
+		    	</button>
+		    	<button id="addAll">
+		    		<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+		    		<span class="sr-only">&raquo;</span>
+		    	</button>
+		    	<button id="removeAll">
+		    		<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+		    		<span class="sr-only">&lt;</span>
+		    	</button>
+		    	<button id="remove">
+		    		<i class="fa fa-angle-left" aria-hidden="true"></i>
+		    		<span class="sr-only">&laquo;</span>
+		    	</button>
+		    </div>
+		    {% if hasNext %}
+		    	<a id="next" class="btn" href="{{ path('contact_import',{'page':page+1}) }}">{{ 'contact.import.next'|trans }}</a>
+		    {% endif %}
+		    <a id="import" class="btn">{{ 'contact.import.import'|trans }}</a>
+			<ul id="contacts_to_import">
+				
+			</ul>
+	</div>
+{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets '@AppBundle/Resources/public/css/contact_import.css' %}
+		<link rel="stylesheet" href="{{ asset_url }}"/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts '@jquery_ui' '@translator' '@AppBundle/Resources/public/js/contact_import.js' %}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

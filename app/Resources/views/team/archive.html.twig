@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ 'team.archive.title'|trans({'%name%': team.name}) }}{% endblock %}
+{% block body %}
+	<h1>{{ 'team.archive.title'|trans({'%name%': team.name}) }}</h1>
+	{% for company in companies %}
+		{{ company.name }}
+		{% if not loop.last %}
+			<hr/>
+		{% endif %}
+	{% else %}
+		<p>{{ 'team.archive.nothing'|trans }}</p>
+	{% endfor %}
+{% endblock body %}

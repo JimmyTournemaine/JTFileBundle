@@ -1,0 +1,179 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@AppBundle/Resources/config/services.yml" }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@CalendarBundle/Resources/config/services.yml" }
+    - { resource: "@TaskBundle/Resources/config/services.yml" }
+    - { resource: "@MapsBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+    google_api_key: AIzaSyBVXV9mL2yiAzzt2Y57vdBasUO2Mfdy1G0
+    project_name: "The Simple CRM"
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["%locale%", "fr"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    form_themes:      ['form/form_theme.html.twig']
+    globals:
+        google_api_key: "%google_api_key%"
+        project_name:   "%project_name%"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        types:
+            phone_number: Misd\PhoneNumberBundle\Doctrine\DBAL\Types\PhoneNumberType
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+# FOSUserBundle Configuration
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: UserBundle\Entity\User
+    registration:
+        form:
+            type: UserBundle\Form\Type\RegistrationFormType
+            validation_groups: [AppRegistration]
+    profile:
+        form:
+            type: UserBundle\Form\Type\ProfileFormType
+            validation_groups: [AppProfile]
+
+# OAuth Configuration
+hwi_oauth:
+    connect:
+        account_connector: user_oauth_aware.user_provider
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_names: [main]
+    fosub:
+        username_iterations: 30
+        properties:
+            google: googleId
+    resource_owners:
+        google:
+            type:                google
+            client_id:           793504421053-gtbul26p9l4ih00p2032jffqu1usjmlb.apps.googleusercontent.com
+            client_secret:       1n13Cx-lGTfuGGFQqbaHGyK2
+            scope:               "profile email https://www.google.com/m8/feeds/"
+    
+# KNPMenuBundle Configuration
+knp_menu:
+    twig:
+        template: navigation.html.twig
+    templating: false
+    default_renderer: twig
+    
+# StofDoctrineExtensions Configuration
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    orm:
+        default:
+            sluggable: true
+            
+# Assetic Configuration
+assetic:
+  debug:           '%kernel.debug%'
+  use_controller:  '%kernel.debug%'
+  filters:
+      cssrewrite: ~
+  assets:
+      jquery:
+          inputs: [ 'js/jquery.min.js' ]
+      jquery_ui:
+          inputs:
+              - 'js/jquery.min.js'
+              - 'js/jquery-ui.min.js'
+      jquery_ui_css:
+          inputs:
+              - 'css/jquery-ui.min.css'
+              - 'css/jquery-ui.structure.min.css'
+              - 'css/jquery-ui.theme.min.css'
+      bootstrap:
+          inputs: [ 'js/bootstrap.min.js' ]
+      bootstrap_css:
+          inputs:
+              - 'css/bootstrap.min.css'
+              - 'css/bootstrap-theme.min.css'
+      font_awesome_css:
+          inputs: ['css/font-awesome.min.css']
+      translator:
+          inputs:
+              - 'bundles/bazingajstranslation/js/translator.min.js'
+              - 'js/translations/config.js'
+              - 'js/translations/*/*.js'
+      calendar:
+          inputs:
+              - 'bundles/adesignscalendar/js/jquery/jquery-2.1.1.min.js'
+              - 'bundles/adesignscalendar/js/jquery/jquery-ui.custom.min.js'
+              - 'bundles/adesignscalendar/js/moment/moment.min.js'
+              - 'bundles/adesignscalendar/js/fullcalendar/fullcalendar.min.js'
+              - 'bundles/adesignscalendar/js/fullcalendar/fullcalendar-lang-all.js'
+              - '@CalendarBundle/Resources/public/js/calendar-settings.js'
+      calendar_css:
+          inputs:
+              - 'bundles/adesignscalendar/css/fullcalendar/fullcalendar.css'
+              - 'bundles/adesignscalendar/css/fullcalendar/fullcalendar.print.css'
+
+# JTMail Configuration
+jt_mail:
+    templates:
+        header: { html: 'email/header.html.twig' }
+        footer: { html: 'email/footer.html.twig' }
+
+# JTContactUs Configuration
+jt_contact_us:
+    email_property: 'email'
+    extra_properties:
+        - { name: 'firstname', type: 'text' }
+        - { name: 'lastname', type: 'text' }
+        
+
+      

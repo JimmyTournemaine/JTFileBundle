@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+#contacts_import > ul {
+	min-height: 100px;
+	width: 100%;
+	border: 1px solid black;
+}
+.ui-selecting{
+    background:white;
+}
+.ui-selected{
+    background:black;
+    color:#fff;
+}

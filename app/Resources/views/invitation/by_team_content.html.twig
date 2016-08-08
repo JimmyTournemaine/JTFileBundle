@@ -1,0 +1,6 @@
+
+    {{ form_start(form, {'name': 'team_invite_form', 'action': path('invitation_by_team')}) }}
+    	{{ form_widget(form) }}
+        <input type="submit" value="{{ 'invitation.by_team.form.submit'|trans }}" />
+        <a href="{{ path('team_index') }}">{{ 'invitation.by_team.form.back'|trans }}</a>
+    {{ form_end(form) }}

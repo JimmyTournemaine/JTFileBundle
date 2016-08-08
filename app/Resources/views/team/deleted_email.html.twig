@@ -1,0 +1,8 @@
+<p>An administrator of the team <strong>{{ team.name }}</strong> has deleted your team data 
+on <a href="{{ path('homepage') }}">{{ url('homepage') }}</a>.</p>
+
+<p>To prevent troubles about your work, 
+we have created an archive containing all the data of your team. 
+It will remain available for 7 days.</p>
+
+<p>Please get your data at {{ url('archive_retrieve', {'archive': id}) }}.</p>

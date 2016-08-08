@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
+    <head>
+        <meta charset="UTF-8" />
+        {% block meta_tags %}{% endblock %}
+        <title>{% block title %}{{ 'homepage.title'|trans }}{% endblock %}</title>
+        {% stylesheets '@bootstrap_css' '@font_awesome_css' 'bundles/app/css/default.css' 'css/social-connect.css' filter='cssrewrite' output='css/base.css' %}
+        	<link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="navbar navbar-custom navbar-fixed-top">
+        	<div class="container-fluid">
+                 <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                         <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="{{ path('homepage') }}">
+                     	<img alt="Logo" src="{{ asset('img/logo50.png') }}">
+                     	{{ project_name }}
+                     </a>
+                 </div>
+                 <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                     	{{ knp_menu_render('AppBundle:MenuBuilder:mainMenu') }}
+                     {% else %}
+                     	{{ knp_menu_render('AppBundle:MenuBuilder:welcomeMenu') }}
+                     {% endif %}
+                    {{ knp_menu_render('AppBundle:MenuBuilder:userMenu') }}
+                 </div>
+             </div>
+         </div>
+
+	    {% block flashes %}
+	   		<div id="flashes">
+				{% if app.request.hasPreviousSession %}
+                    {% for type, flashes in app.session.flashbag.all() %}
+                	    {% for message in flashes %}
+                	    	{{ flash(type,message)|raw }}
+                	    {% endfor %}
+                	{% endfor %}
+				{% endif %}
+				<noscript>{{ flash('warning', 'noscript'|trans)|raw }}</noscript>
+			</div>
+		{% endblock flashes %}
+
+        {% block container %}
+        <div class="container">
+        	{% block body %}{% endblock %}
+        </div>
+        {% endblock container %}
+
+        <footer>
+            <div class="container">
+            	<div class="row">
+                	<div class="col-md-4">
+                    	{{ project_name }} &copy; 2015-{{ "now"|date('Y') }}
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-4">
+                        <ul class="list-inline">
+                            <li>
+                    	        <a href="http://blog.thesimplecrm.net">Blog</a>
+                            </li>
+                            <li>
+                        	    <a href="#legal">Legal</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="{{ path('welcome') }}#features">Features</a>
+                            </li>
+                            <li>
+                     	        <a class="page-scroll" href="{{ path('welcome') }}#pricing">Pricing</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="{{ path('jt_contact_us_show') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-1">
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/TheSimpleCrm"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/The-Simple-Crm-499942156832008/"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/10227741?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10227741%2Cidx%3A2-1-2%2CtarId%3A1469094582650%2Ctas%3Athe%20simple%20crm"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+		<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+		<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+		{% javascripts '@jquery' '@bootstrap' %}
+			<script src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+		{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			<script type="text/javascript" src="{{ asset('js/login_popover.js') }}"></script>
+		{% endif %}
+        {% block javascripts %}{% endblock %}
+
+
+    </body>
+</html>

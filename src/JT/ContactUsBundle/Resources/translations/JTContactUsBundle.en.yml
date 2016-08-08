@@ -1,0 +1,6 @@
+contact:
+    labels:
+        email: Votre email
+        subject: Subject
+        content: Message
+        send: Send

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'task.edit.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'task.edit.title'|trans }}</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="{{ 'task.edit.submit'|trans }}" />
+        <a href="{{ path('task_index') }}">{{ 'task.edit.back'|trans }}</a>
+    {{ form_end(edit_form) }}
+{% endblock %}

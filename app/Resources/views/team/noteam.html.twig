@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<h1>{{ 'noteam.title' }}</h1>
+	
+	{{ render(controller('UserBundle:Team:new')) }}
+	{{ render(controller('UserBundle:Team:join')) }}
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts '@jquery' '@UserBundle/Resources/public/js/team_search.js'%}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

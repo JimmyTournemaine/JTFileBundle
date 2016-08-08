@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'task.index.title'|trans }}{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>{{ 'task.index.title'|trans }}</h1>
+	
+	<div id="new_task">
+		<p><a>{{ 'task.index.add' }}</a></p>
+	</div>
+	<div id="task-list">
+	    <ul id="todo" class="sortable">
+	    	{% for task in tasks if task.status is null %}
+	    		<li class="task" data-id="{{ task.id }}" data-container="body" data-toggle="popover" data-placement="right" data-content="{{ task.description }}">
+	    			{{ task.name }} - {{ task.deadline|date('Y/m/d') }}
+	    		</li>
+	    	{% endfor %}
+	    </ul>
+	    <ul id="wip" class="sortable">
+	    	{% for task in tasks if task.status is not null and task.status == false %}
+	    		<li class="task" data-id="{{ task.id }}" data-container="body" data-toggle="popover" data-placement="right" data-content="{{ task.description }}">
+	    			{{ task.name }} - {{ task.deadline|date('Y/m/d') }}
+	    		</li>
+	    	{% endfor %}
+	    </ul>
+	    <ul id="done" class="sortable">
+	    	{% for task in tasks if task.status == true %}
+	    		<li class="task" data-id="{{ task.id }}" data-container="body" data-toggle="popover" data-placement="left" data-content="{{ task.description }}">
+	    			{{ task.name }} - {{ task.deadline|date('Y/m/d') }}
+	    		</li>
+	    	{% endfor %}
+    	</ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets '@jquery_ui_css' '@TaskBundle/Resources/public/css/task_index.css' filter='cssrewrite' %}
+		<link rel="stylesheet" href="{{ asset_url }}"/>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts '@jquery_ui' '@bootstrap' '@translator' '@TaskBundle/Resources/public/js/task_index.js' %}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

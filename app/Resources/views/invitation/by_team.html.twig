@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'invitation.by_team.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'invitation.by_team.title'|trans }}</h1>
+
+	{{ include('invitation/by_team_content.html.twig') }}
+{% endblock %}

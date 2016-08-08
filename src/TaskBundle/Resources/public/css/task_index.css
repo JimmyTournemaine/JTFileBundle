@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+#todo, #wip, #done {
+	min-height: 100px; 
+	min-width: 100px;
+}
+#todo {
+	border: 1px solid red; 
+}
+#wip {
+	border: 1px solid blue;
+}
+#done {
+	border: 1px solid green;
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'invitation.by_user.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'invitation.by_user.title'|trans }}</h1>
+
+	<p>{{ 'invitation.by_user.confirmation'|trans }}</p>
+    {{ form_start(form) }}
+        <input type="submit" value="{{ 'invitation.by_user.form.submit'|trans }}" />
+        <a href="{{ path('invitation_index') }}">{{ 'invitation.by_user.form.back'|trans }}</a>
+    {{ form_end(form) }}
+{% endblock %}

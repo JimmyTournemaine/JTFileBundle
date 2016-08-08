@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'team.new.title'|trans }}{% endblock %}
+{% block body %}
+
+	{{ include('team/new_content.html.twig') }}
+
+    <ul>
+        <li>
+            <a href="{{ path('team_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

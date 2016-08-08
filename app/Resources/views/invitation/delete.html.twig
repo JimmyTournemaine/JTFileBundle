@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'invitation.delete.title'|trans }}{% endblock %}
+{% block body %}
+    <h1>{{ 'invitation.delete.title'|trans }}</h1>
+
+	<p>{{ 'invitation.delete.confirmation'|trans }}</p>
+    {{ form_start(form) }}
+        <input type="submit" value="{{ 'invitation.delete.form.submit'|trans }}" />
+        <a href="{{ path(backRoute) }}">{{ 'invitation.delete.back'|trans }}</a>
+    {{ form_end(form) }}
+{% endblock %}

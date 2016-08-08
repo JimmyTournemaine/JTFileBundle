@@ -1,0 +1,4 @@
+services:
+    maps.generator.map_generator:
+        class: MapsBundle\Generator\MapGenerator
+        arguments: ["@fungio_google_map.map"]

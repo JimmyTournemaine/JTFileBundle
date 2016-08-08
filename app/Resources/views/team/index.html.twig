@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% import "invitation/macro_invitation.html.twig" as macros %}
+{% block title %}{{ 'team.index.title'|trans({'%name%': team.name}) }}{% endblock %}
+{% block body %}
+    <h1>{{ 'team.index.title'|trans({'%name%': team.name}) }}</h1>
+	
+	
+	<h3>{{ 'team.index.invitations.title' }}</h3>
+	
+	<table id="invitations_table">
+		{% for invitation in invitations %}
+		  {{ macros.invitation(invitation, 'team') }}
+		{% else %}
+			<tr><td>{{ 'team.index.invitations.none'|trans }}</td></tr>
+		{% endfor %}
+	</table>
+	
+	{% if app.user.isAdmin(team) %}
+		{{ render(controller('UserBundle:Invitation:byTeam')) }}
+	{% endif %}
+	
+	<h2>{{ 'team.index.members.title'|trans }}</h2>
+	<table>
+		{% for member in team.getAllMembers() %}
+		  <tr>
+		    <td>{{ member.username }}</td>
+		  </tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts '@jquery_ui' '@translator' '@UserBundle/Resources/public/js/team_invite.js' %}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

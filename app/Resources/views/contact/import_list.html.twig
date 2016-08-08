@@ -1,0 +1,3 @@
+{% for contact in contacts %}
+	<li data-contact="{{ contact|json_encode() }}"><td>{{ contact }}</li>
+{% endfor %}
