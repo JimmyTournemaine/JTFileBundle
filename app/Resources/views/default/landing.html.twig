@@ -1,16 +1,15 @@
+{% trans_default_domain "landing" %}
 {% extends 'base.html.twig' %}
 {% block title %}{{ project_name }}{% endblock %}
 
 {% block container %}
 	<header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in"><h1>Grow your business with <br/> The Simple Crm</h1>
-                </div>
-                <div class="intro-heading"><h2>Your partner in success</h2>
-                </div>
-                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-xl">Get started</a>
+        <div id="intro-text">
+            <div id="intro-lead-in"><h1>Grow your business with The Simple Crm</h1>
             </div>
+            <div id="intro-heading"><h2>Your partner in success</h2>
+            </div>
+            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-xl">Get started</a>
         </div>
     </header>
 
@@ -126,4 +125,10 @@
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets 'bundles/app/css/landing.css' filter='cssrewrite' %}
+		<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
 {% endblock %}

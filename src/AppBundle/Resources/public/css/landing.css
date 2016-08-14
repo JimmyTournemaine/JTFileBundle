@@ -1,0 +1,106 @@
+html,body{
+	height: 100%;
+}
+
+header {
+  background-color: #0e1a35;
+  background-image: url('../img/landing_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: white;
+  height: calc(100% - 100px);
+}
+header #intro-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+header #intro-text #intro-lead-in {
+  font-family: "Share", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+  overflow: wrap;
+}
+header #intro-text #intro-heading {
+  font-family: "Share", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  header #intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+  header #intro-text #intro-lead-in {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+  header #intro-text #intro-heading {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+  }
+}
+/*! ---------------------- Pricing -------------------- */
+
+section#pricing {
+  background-color: #0e1a35;
+  background-image: url("../img/pricing.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+section#pricing h1,
+section#pricing h2{
+  color: #28ffa0;
+}
+section#pricing h2{
+  text-decoration: underline;
+}
+
+/*! ---------------------- Contact -------------------- */
+
+
+.team-member img {
+  text-align: center;
+  margin: 0 auto;
+  border: 7px solid #0e1a35;
+}
+section#contact a,
+section#contact .poste,
+section#contact .contact-heading {
+  color: #28ffa0;
+}
+section#contact a :hover,
+section#contact a :focus{
+  color: #24e791;
+}
+
+.team-member ul.social-buttons li a{
+  display: block;
+  background-color: #0e1a35;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 40px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
