@@ -5,3 +5,9 @@ parameters:
     from_email: services@thesimplecrm.net
     from_name:  The Simple CRM Team
     beta_end: "2016-09-01"
+    
+services:
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }

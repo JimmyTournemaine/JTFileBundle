@@ -1,0 +1,101 @@
+title: Conditions Générales d'Utilisation
+updated_at: Dernière mise à jour le
+intro: Les présentes Conditions Générales d'Utilisation ont pour objet de définir les modalités de mise à disposition du site %url%, ci-après nommé "le Site" et les conditions d'utilisation des services mis à disposition sur le Site par les Utilisateurs.
+definitions:
+    title: Définitions
+    site:
+        title: Site
+        description: Le Site désigne le site web %url%
+    user:
+        title: Utilisateur
+        description: L'Utilisateur est toute personne qui utilise le Site ou l'un des services proposé sur le Site.
+    member:
+        title: Membre
+        description: Un Membre est un Utilisateur identifié sur le Site.
+    admin:
+        title: Administrateur
+        description: Un Administrateur est un utilisateur disposant de plus de droits que les Membres sur le Site.
+    content:
+        title: Contenu
+        description: Les termes "Contenu Utilisateur" désignent les données transmises par l'Utilisateur dans les différentes rubriques du Site.
+legal_notice:
+    title: Mentions légales
+    intro: Le Site est une œuvre de %author% dont le siège se situe %address% et pouvant être contacté par le biais du formulaire de contact ou en envoyant un mail à %mail%.
+    publication_director: Le directeur de la publication, %director%, est responsable du contenu proposé à l'Utilisateur. N'étant cependant pas le seul à pouvoir publier du contenu, un système de modération sera mis en place. L'Utilisateur pourra ainsi signaler tout contenu inapproprié qui fera l'objet d'une modération et d'éventuelles sanctions seront appliquées à son auteur.
+    host: Le Site est hébergé chez %name% dont le siège social se situe %address%.
+    cnil: Ce site est déclaré à la Commission Nationale Informatique et Libertés (CNIL) sous le numéro %number% et respecte les dispositions de la loi 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés. En application de la loi nº 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, l'Utilisateur dispose des droits d'opposition (art. 26 de la loi), d'accès (art. 34 à 38 de la loi) et de rectification (art. 36 de la loi) des données le concernant.
+access_condition:
+    title: Condition d'accès
+    description: Le Site est une application de gestion de la relation client. Elle possède de nombreux modules permettant aux Membres de s'organiser efficacement et de suivre efficacement leurs dossiers. L'accès à cette application nécessite une authentification sur le Site grâce à une identification. La page de présentation et le blog sont les deux exceptions qui ne nécessitent aucune identification.
+price:
+    title: Prix
+    description: Le Site est entièrement gratuit pour le moment. Aucune modification de cette gratuité ne pourrai être observée pour ses Membres actuels.
+intellectual_property:
+    title: Propriété intellectuelle
+    intro: Le Site est une œuvre crée en France. Celle-ci est donc soumise à la legislation française, en particulier au Code de la propriété intellectuelle. Tout contenu copié sans autorisation est une contrefaçon et peut entrainer de lourdes sanctions. Les articles ci-après sont donnés à titre indicatif car il s'agit de la version en vigueur au 2 août 2016. Toute modification apportée au code de la propriété intellectuelle est, immédiatement et incontestablement, appliquée aux services proposés par le Site.
+    laws:
+        - Article L111-1
+        - L'auteur d'une œuvre de l'esprit jouit sur cette œuvre, du seul fait de sa création, d'un droit de propriété incorporelle exclusif et opposable à tous. Ce droit comporte des attributs d'ordre intellectuel et moral ainsi que des attributs d'ordre patrimonial, qui sont déterminés par les livres Ier et III du présent code. L'existence ou la conclusion d'un contrat de louage d'ouvrage ou de service par l'auteur d'une œuvre de l'esprit n'emporte pas dérogation à la jouissance du droit reconnu par le premier alinéa, sous réserve des exceptions prévues par le présent code. [...]
+        - Article L111-3
+        - L'œuvre est réputée créée, indépendamment de toute divulgation publique, du seul fait de la réalisation, même inachevée, de la conception de l'auteur.        
+        - Article L111-5
+        - Sous réserve des conventions internationales, les droits reconnus en France aux auteurs de logiciels par le présent code sont reconnus aux étrangers sous la condition que la loi de l'Etat dont ils sont les nationaux ou sur le territoire duquel ils ont leur domicile, leur siège social ou un établissement effectif accorde sa protection aux logiciels créés par les nationaux français et par les personnes ayant en France leur domicile ou un établissement effectif.
+        - Article L112-1
+        - Les dispositions du présent code protègent les droits des auteurs sur toutes les œuvres de l'esprit, quels qu'en soient le genre, la forme d'expression, le mérite ou la destination.
+        - Article L335-2
+        - Toute édition d'écrits, de composition musicale, de dessin, de peinture ou de toute autre production, imprimée ou gravée en entier ou en partie, au mépris des lois et règlements relatifs à la propriété des auteurs, est une contrefaçon et toute contrefaçon est un délit. La contrefaçon en France d'ouvrages publiés en France ou à l'étranger est punie de trois ans d'emprisonnement et de 300 000 euros d'amende. Seront punis des mêmes peines le débit, l'exportation, l'importation, le transbordement ou la détention aux fins précitées des ouvrages contrefaisants. Lorsque les délits prévus par le présent article ont été commis en bande organisée, les peines sont portées à sept ans d'emprisonnement et à 750 000 euros d'amende.
+personal_data:
+    title: Données personnelles
+    finality:
+        title: Finalité
+        intro: La collecte des données personnelles de l'Utilisateur est utilisée uniquement à des fins statistiques ainsi que pour des enquêtes de satisfaction.
+        protection: "Le Site tiens à la protection des données de ses Membres, ainsi leurs données de seront jamais divulguées à des tiers sans leur accord. Les données sont ainsi collectées et traitées de manière loyale et licite. Les données récupérées ponctuellement ne seront pas enregistrées. Par exemple :"
+        examples:
+            - La localisation de l'Utilisateur pour calculer le temps de trajet entre ses rendez-vous de la journée ne sera collecté que pour ce calcul et sera immédiatement effacé.
+            - Les contacts Google à importer ne seront disponibles que sur la page d'import et uniquement la première heure de votre connexion à votre compte Google.
+        discretion: Les données que les Membres peuvent recueillir, concernant les prospects, doivent être soumises à la discrétion professionnelle.
+    relevance:
+        title: Pertinence
+        sensitive_data: Les données dites sensibles, c'est-à-dire qui relève des origines raciales, ethniques, les opinions politiques, philosophiques ou religieuses, l'appartenance syndicale, la santé ou la vie sexuelle des Membres, ne seront jamais collectées. Ils n'ont d'ailleurs pas leur place sur le Site.
+        free_fields: Le service de gestion de la relation client dispose de champs à remplir librement. Ces champs de texte sont utiles pour assurer le suivi d'un dossier. En aucun cas, un commentaire ne pourra être désobligeant, discriminant, injurieux ou ne pourra porter atteinte aux droits des personnes concernées. Le site se réserve le droit de modification et de suppression d'un tel commentaire ainsi que le blocage et la suppression du compte d'un Utilisateur qui ne respecterait pas cette clause.
+        invalid_data: Le Site s'engage et les Membres s'engagent également, à ne recueillir que des données exactes et non excessives au regard des finalités pour lesquelles elles sont collectées. Si elles sont inexactes ou incomplètes, elles devront être rectifiées ou effacées.
+    retention:
+        title: Conservation
+        intro: Les données personnelles d'un Membre sont conservées jusqu'à la suppression du compte du Membre. Les coordonnées d'un prospect qui ne répond à aucune sollicitation pendant trois ans doivent être supprimées conformément à la loi. Enfin, les données que le Site pourrait recueillir pour une enquête de satisfaction ne seront conservées que jusqu'à la fin de celle-ci.
+        deleting: Si un Membre souhaite arrêter d'utiliser les services du Site et que ce Membre dissout son équipe, les données de cette dernière seront archivées et resteront à disposition des membres de cette équipe pendant sept jours. Au-delà de ce délai, toutes les informations seront supprimées et ne pourront plus jamais être récupérées par quelque moyen que ce soit. Ce délai ne s'applique pas aux données strictement personnelles qui seront supprimées immédiatement à la clôture du compte.
+        team: Si un Membre quitte son équipe ou qu'un administrateur d'une équipe exclu un membre de celle-ci, ce Membre n'aura pas l'autorisation d'accéder aux données recueillies. Le Membre exclu pourra cependant contacter les administrateurs du Site en cas de litige pour trouver un accord avec les administrateurs de son ancienne équipe pour éventuellement laisser au Membre exclu un accès partiel ou complet à ses anciennes données.
+    respect:
+        title: Respecter les droits des personnes
+        content:
+            - Les Membres du Site disposent de droits afin de garder une complète maitrise de leurs données. Différentes sections du Site permettent de les exercer en modifiant leur profil, leurs préférences...
+            - Le Site enregistre les données dans une base de données. Ces données sont utilisées en accord avec la finalité de la collecte de données décrite ci-dessus. Des informations faussées ou qui ne respectent pas le droit des personnes seront supprimées. Le compte d'un Membre qui ne respecte pas le droit des autres Utilisateurs pourra se voir banni pour une durée déterminée, son compte pourrait être supprimé ou son adresse IP pourrait être bloquée sur l'ensemble des services du Site.
+            - Toute donnée personnelle renseignée par un Utilisateur qui s'avérerai inexacte ou fausse est assimilée à une fraude, une substitution ou une usurpation d'indentité, sanctionnée lourdement par le code pénal.
+            - Chaque Membre possède le droit d'accès, de rectification et d'opposition aux données des services du Site. De même, l'Utilisateur accepte les présentes Conditions Générales d'Utilisation lors de son inscription et à chaque évolution de celles-ci. Sans cet accord préalable, aucune collecte de donnée n'aura lieu, mais l'Utilisateur ne pourra accéder aux services qui requièrent une authentification des Utilisateurs.
+            - Le mot de passe de l'Utilisateur pourrait lui être demandé à la modification d'informations le concernant même si celui-ci est déjà authentifié, afin d'éviter la modification d'informations personnelles par une tierce personne à qui le Membre pourrait laisser involontairement l'accès aux services du Site.
+            - L'Utilisateur à le droit de s'opposer, pour des motifs légitimes, au traitement de ses données. De l'autre côté les administrateurs du Site peuvent refuser la demande d'accès aux données de l'Utilisateur. Ce cas pourrait arrivé dans le cas d'une usurpation d'identité ou d'une atteinte à autrui. Le Membre concerné pourra cependant utiliser le formulaire de contact pour contester cette décision.
+            - Finalement, les données de l'Utilisateur sont personnelles et aucun autre Membre du Site n'y aura accès à l'unique exception des données partagées entre membres d'une même équipe.
+    security:
+        title: Sécurité
+        content: Le Site met un point d'honneur à la protection des données de ses Utilisateurs. C'est pourquoi les données sensibles sont cryptées de manière irréversibles et que la plupart des services sont à accès restreint et nécessite une authentification, une habilitation et une vérification d'accès.
+    transfer:
+        title: Transfert de données
+        content: L'Utilisateur autorise le Site à communiquer ses données dans la cas où le Site devrai changer d'adresse. En aucun autre cas le Site ne transférera des données à un partenaire sans accord préalable de l'Utilisateur.
+responsability:
+    title: Responsabilité
+    content: Dans l'hypothèse où un tiers engagerait une action en justice contre le Site, suite à une violation par l'Utilisateur des conditions d'utilisation du Site ayant causé un préjudice direct ou indirect à un tiers, l'Utilisateur accepte d'indemniser le Site à proportion de sa responsabilité dans la comission des faits litigieux en raison de cette action.
+links:
+    title: Liens hypertexte
+    content: Le Site propose des liens hypertextes vers des sites web édités et/ou gérés par des tiers. Dans la mesure où aucun contrôle n'est exercé sur ces ressources externes, l'Utilisateur reconnaît que le Site n'assume aucune responsabilité relative à la mise à disposition de ces ressources et ne peut être tenu responsable quant à leur contenu.
+major_force:
+    title: Force majeur
+    content: La responsabilité du Site ne pourra être engagée en cas de force majeure ou de faits indépendant de sa volonté.
+evolving:
+    title: Évolution
+    content: Dans la mesure où un Utilisateur du Site est soumis à la présente, toute modification, évolution ou mise à jour de celle-ci entrainera une demande d'acceptation des nouvelles conditions par les celui-ci. Toute modification des services proposés fera l'objet d'une note disponible pour tous les Utilisateurs.
+juridiction:
+    title: Droit applicable et juridiction compétente
+    content: NOTHING TO SHOW HERE
+social_networks:
+    title: Réseaux sociaux
+    content: L'Utilisateur du Site est autorisé à s'inscrire sur les pages du Site sur les réseaux sociaux. En adhérent à ces pages, l'Utilisateur s'oblige à respecter la totalité des conditions d'utilisation du site sur laquelle se situe la page. En respect des conditions d'utilisation de ces réseaux sociaux et de notre propre ethique, le Site s'engage à ne jamais vendre des données utilisateurs provenant de ses sites.
+    

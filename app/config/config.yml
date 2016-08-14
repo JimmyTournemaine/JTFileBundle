@@ -11,9 +11,18 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
     google_api_key: AIzaSyBVXV9mL2yiAzzt2Y57vdBasUO2Mfdy1G0
     project_name: "The Simple CRM"
+    project_url: https://www.thesimplecrm.net/
+    project_author: The Simple CRM
+    project_address: unknown
+    project_contact_mail: contact@thesimplecrm.net
+    project_publication_director: Raphaël Guigo
+    project_hostname: "1&1 SARL"
+    project_hostaddr: "7 PLACE DE LA GARE 57200 SARREGUEMINES"
+    project_cnil_number: unknown
+    
 
 framework:
     #esi:             ~

@@ -1,0 +1,101 @@
+{% trans_default_domain "legal" %}
+{% extends "base.html.twig" %}
+{% block title %}{{ 'title'|trans }}{% endblock %}
+
+{% block body %}
+<h1>{{ 'title'|trans }}</h1>
+<h2 id="last_update">{{ 'updated_at'|trans }} {{ last_update|localizeddate('medium') }}</h2>
+<p id="intro">{{ 'intro'|trans({'%url%': project_url}) }}
+
+<h2>{{ 'definitions.title'|trans }}</h2>
+
+<ul>
+	<li><strong>{{ 'definitions.site.title'|trans }} : </strong>{{ 'definitions.site.description'|trans({'%url%': project_url}) }}</li>
+	<li><strong>{{ 'definitions.user.title'|trans }} : </strong>{{ 'definitions.user.description'|trans }}</li>
+	<li><strong>{{ 'definitions.member.title'|trans }} : </strong>{{ 'definitions.member.description'|trans }}</li>
+	<li><strong>{{ 'definitions.admin.title'|trans }} : </strong>{{ 'definitions.admin.description'|trans }}</li>
+	<li><strong>{{ 'definitions.content.title'|trans }} : </strong>{{ 'definitions.content.description'|trans }}</li>
+</ul>
+
+<h2 id="legal_notice">{{ 'legal_notice.title'|trans }}</h2>
+
+<p>{{ 'legal_notice.intro'|trans({'%author%': project_author, '%address%': project_address, '%mail%': project_contact_mail}) }}</p>
+<p>{{ 'legal_notice.publication_director'|trans({'%director%': project_publication_director}) }}</p>
+<p>{{ 'legal_notice.host'|trans({'%name%': project_hostname, '%address%': project_hostaddr}) }}</p>
+<p>{{ 'legal_notice.cnil'|trans({'%number%': project_cnil_number}) }}</p>
+
+
+<h2>{{ 'access_condition.title'|trans }}</h2>
+<p>{{ 'access_condition.description'|trans }}</p>
+
+<h2>{{ 'price.title'|trans }}</h2>
+<p>{{ 'price.description'|trans }}</p>
+
+<h2>{{ 'intellectual_property.title'|trans }}</h2>
+<p>{{ 'intellectual_property.intro'|trans }}</p>
+{% for i in 0..9 %}
+	{% if i % 2 == 0 %}
+	<h3>{{ ('intellectual_property.laws.'~i)|trans }}</h3>
+	{% else %}
+	<blockquote>{{ ('intellectual_property.laws.'~i)|trans }}</blockquote>
+	{% endif %}
+{% endfor %}
+
+<h2>{{ 'personal_data.title'|trans }}</h2>
+
+<h3>{{ 'personal_data.finality.title'|trans }}</h3>
+<p>{{ 'personal_data.finality.intro'|trans }}</p>
+<p>{{ 'personal_data.finality.protection'|trans }}</p>
+<ul>
+	<li>{{ 'personal_data.finality.examples.0'|trans }}</li>
+	<li>{{ 'personal_data.finality.examples.1'|trans }}</li>
+</ul>
+<p>{{ 'personal_data.finality.discretion'|trans }}</p>
+
+
+<h3>{{ 'personal_data.relevance.title'|trans }}</h3>
+<p>{{ 'personal_data.relevance.sensitive_data'|trans }}</p>
+<p>{{ 'personal_data.relevance.free_fields'|trans }}</p>
+<p>{{ 'personal_data.relevance.invalid_data'|trans }}</p>
+
+<h3>{{ 'personal_data.retention.title'|trans }}</h3>
+<p>{{ 'personal_data.retention.intro'|trans }}</p>
+<p>{{ 'personal_data.retention.deleting'|trans }}</p>
+<p>{{ 'personal_data.retention.team'|trans }}</p>
+
+<h3>{{ 'personal_data.respect.title'|trans }}</h3>
+{% for i in 0..6 %}
+	<p>{{ ('personal_data.respect.content.'~i)|trans }}</p>
+{% endfor %}
+
+
+<h3>{{ 'personal_data.security.title'|trans }}</h3>
+<p>{{ 'personal_data.security.content'|trans }}</p>
+
+<h3>{{ 'personal_data.transfer.title'|trans }}</h3>
+<p>{{ 'personal_data.transfer.content'|trans }}</p>
+
+<h2>{{ 'responsability.title'|trans }}</h2>
+<p>{{ 'responsability.content'|trans }}</p>
+
+<h2>{{ 'links.title'|trans }}</h2>
+<p>{{ 'links.content'|trans }}</p>
+
+<h2>{{ 'major_force.title'|trans }}</h2>
+<p>{{ 'major_force.content'|trans }}</p>
+
+<h2>{{ 'evolving.title'|trans }}</h2>
+<p>{{ 'evolving.content'|trans }}</p>
+
+<h2>{{ 'juridiction.title'|trans }}</h2>
+<p>{{ 'juridiction.content'|trans }}</p>
+
+<h2>{{ 'social_networks.title'|trans }}</h2>
+<p>{{ 'social_networks.content'|trans }}</p>
+{% endblock body %}
+
+{% block stylesheets %}
+	{% stylesheets 'bundles/app/css/legal.css' filter='cssrewrite' %}
+		<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
