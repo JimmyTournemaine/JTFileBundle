@@ -15,7 +15,7 @@ class AppExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'flash' => new \Twig_Function_Method($this, 'flashFunction')
+            new \Twig_SimpleFunction('flash', array($this, 'flashFunction'))
         );
     }
 
