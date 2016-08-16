@@ -1,5 +1,8 @@
 <?php
-namespace JT\MailBundle\Mail;
+namespace JT\MailBundle\Mailer;
+
+use JT\MailBundle\Mailer\JTMailerInterface;
+use JT\MailBundle\Exception\NoMessageToSendException;
 
 /**
  * Mailer to easily send HTML and Plain text mail
@@ -63,7 +66,7 @@ class JTMailer implements JTMailerInterface
 			}
 		}
 
-		for($this->attachments as $attachment){
+		foreach($this->attachments as $attachment){
 			$message->attach(\Swift_Attachment::fromPath($attachment));
 		}
 
@@ -78,13 +81,13 @@ class JTMailer implements JTMailerInterface
 
 	public function setHtmlBodyTemplate($template, array $parameters = array())
 	{
-		$this->htmlBody = $this->templating->renderView($template, $parameters));
+		$this->htmlBody = $this->templating->renderView($template, $parameters);
 		return $this; 
 	}
 
 	public function setTextBodyTemplate($template, array $parameters = array())
 	{
-		$this->textBody = $this->templating->renderView($template, $parameters));
+		$this->textBody = $this->templating->renderView($template, $parameters);
 		return $this; 
 	}
 
@@ -102,19 +105,19 @@ class JTMailer implements JTMailerInterface
 
 	public function setHtmlBody($content)
 	{
-		$this->htmlBody = $body;
+		$this->htmlBody = $content;
 		return $this;
 	}
 
 	public function setTextBody($content)
 	{
-		$this->textBody = $body;
+		$this->textBody = $content;
 		return $this;
 	}
 
 	public function setFooter($content)
 	{
-		$this->footer = $footer;
+		$this->footer = $content;
 		return $this;
 	}
 

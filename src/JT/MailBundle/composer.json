@@ -1,0 +1,22 @@
+{
+	"name": "jimmytournemaine/jt-mail-bundle",
+	"type": "bundle",
+	"description": "Easy to use mailer and crossjoin/pre-mailer integration",
+	"keywords": ["mail", "mailer"],
+	"homepage": "https://github.com/JimmyTournemaine/JTMailBundle",
+	"licence": "MIT",
+	"authors": [
+		{
+			"name": "Jimmy Tournemaine",
+			"email": "jimmy.tournemaine@yahoo.fr",
+			"homepage": "http://tournemaine.com",
+			"role": "Developer"
+		}
+	]
+	"require": {
+		"php": ">=5.4.0",
+		"symfony/symfony": ">=2.6"
+		"crossjoin/pre-mailer": "1.0.*"
+	}
+}
+

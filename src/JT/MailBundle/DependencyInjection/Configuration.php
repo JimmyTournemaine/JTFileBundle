@@ -22,25 +22,24 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('templates')->isRequired()->addDefaultsIfNotSet()
-                    ->children()
-                        ->arrayNode('header')->addDefaultsIfNotSet()
-                            ->children()
-                                ->scalarNode('html')->defaultNull()->end()
-                                ->scalarNode('text')->defaultNull()->end()
-                            ->end()
-                        ->end()
-                        ->arrayNode('footer')->addDefaultsIfNotSet()
-                            ->children()
-                                ->scalarNode('html')->defaultNull()->end()
-                                ->scalarNode('text')->defaultNull()->end()
-                            ->end()
-                        ->end()
-                    ->end()
-                ->end()
+                ->arrayNode('pre_mailer')
+					->children()
+						->scalarNode('charset')->defaultValue('UTF-8')->end()
+						->booleanNode('remove_comments')->defaultTrue()->end()
+						->enumNode('style_tag')
+							->values(array('body', 'head', 'remove'))
+							->defaultValue('body')
+						->end()
+						->booleanNode('remove_classes')->defaultFalse()->end()
+						->integerNode('text_line_width')->defaultValue(60)->end()
+						->scalarNode('css_writer_class')->defaultValue('\Crossjoin\Css\Writer\Compact')->end()
+						->booleanNode('generate_text')->defaultTrue()->end()
+					->end()
+				->end()
             ->end()
         ;
 
         return $treeBuilder;
     }
 }
+

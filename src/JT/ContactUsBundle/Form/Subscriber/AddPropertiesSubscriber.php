@@ -66,17 +66,5 @@ class AddPropertiesSubscriber implements EventSubscriberInterface
         $data['email'] = $this->email;
         $event->setData($data);
     }
-
-    private function getPropertyValue($name)
-    {
-        $value = null;
-        $getters = array($name, 'get'.ucfirst($name), 'is'.ucfirst($name));
-        foreach ($getters as $getter){
-            if (is_callable(array($user, $getter)){
-                $value = $user->$getter()
-            }
-        }
-
-
-    }
 }
+

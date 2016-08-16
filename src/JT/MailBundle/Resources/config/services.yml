@@ -1,4 +1,15 @@
 services:
-#    jt_mail.example:
-#        class: JT\MailBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    jt_mail.pre_mailer:
+        class: JT\MailBundle\Mailer\PreMailer
+        arguments: ["%jt_mail.pre_mailer.options%"]
+
+    jt_mail.event_listener.pre_sending:
+        class: JT\MailBundle\EventListener
+        arguments: ["@jt_mail.pre_mailer"]
+        tags:
+            - { name: jt_mail.pre_sending }
+
+    jt_mailer.mailer:
+        class: JT\MailBundle\Mailer\JTMailer
+        arguments: ["@templating", "@event_dispatcher"]
