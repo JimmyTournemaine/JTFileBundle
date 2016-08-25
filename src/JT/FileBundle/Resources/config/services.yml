@@ -1,4 +1,9 @@
 services:
-#    jt_file.example:
-#        class: JT\FileBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    jt_file.uploader:
+        class: JT\FileBundle\Uploader;
+
+	jt_file.uploadable_file_listener:
+        class: JT\FileBundle\EventListener
+        arguments: ["@jt_file.uploader"]
+
+
