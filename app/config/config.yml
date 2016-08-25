@@ -171,12 +171,6 @@ assetic:
               - 'bundles/adesignscalendar/css/fullcalendar/fullcalendar.css'
               - 'bundles/adesignscalendar/css/fullcalendar/fullcalendar.print.css'
 
-# JTMail Configuration
-jt_mail:
-    templates:
-        header: { html: 'email/header.html.twig' }
-        footer: { html: 'email/footer.html.twig' }
-
 # JTContactUs Configuration
 jt_contact_us:
     email_property: 'email'
