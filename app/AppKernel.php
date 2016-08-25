@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new MapsBundle\MapsBundle(),
             new JT\ContactUsBundle\JTContactUsBundle(),
             new JT\MailBundle\JTMailBundle(),
+            new JT\FileBundle\JTFileBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

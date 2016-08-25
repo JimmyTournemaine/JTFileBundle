@@ -1,3 +1,7 @@
+jt_file:
+    resource: "@JTFileBundle/Resources/config/routing.yml"
+    prefix:   /
+
 jt_mail:
     resource: "@JTMailBundle/Resources/config/routing.yml"
     prefix:   /mail

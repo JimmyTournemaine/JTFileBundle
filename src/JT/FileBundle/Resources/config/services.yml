@@ -1,0 +1,4 @@
+services:
+#    jt_file.example:
+#        class: JT\FileBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
