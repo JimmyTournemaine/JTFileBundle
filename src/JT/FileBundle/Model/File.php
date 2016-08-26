@@ -3,7 +3,7 @@ namespace JT\FileBundle\Model;
 
 use Symfony\Component\HttpFoundation\File\File;
 
-class File implements UploadableFile
+abstract class File implements UploadableFile
 {
 	protected $originalName;
 	protected $filename;
@@ -42,8 +42,9 @@ class File implements UploadableFile
 			return $this->file;
 		}
 
-		return $this->file = new File($this->getAbsolutePathname(), true)
+		return $this->file = new File($this->getAbsolutePathname(), true);
 	}
+
 }
 
 

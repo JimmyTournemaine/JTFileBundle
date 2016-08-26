@@ -12,10 +12,10 @@ class File extends BaseFile
 	/**
 	 * @ORM\Column(name="original")
 	 */
-	protected originalName;
+	protected $originalName;
 
 	/**
 	 * @ORM\Column(name="filename")
 	 */
-	protected filename;
+	protected $filename;
 }

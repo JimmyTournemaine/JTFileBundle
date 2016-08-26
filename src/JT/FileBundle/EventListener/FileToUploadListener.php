@@ -2,14 +2,19 @@
 namespace JT\FileBundle\EventListener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use JT\Filebundle\Uploader\FileDeleter;
+use JT\Filebundle\Uploader\FileUploader;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 
 class FileToUploadListener
 {
 	private $uploader;
+	private $deleter;
 
-	public function __construct(FileUploader $uploader)
+	public function __construct(FileUploader $uploader, FileDeleter $deleter)
 	{
 		$this->uploader = $uploader;
+		$this->deleter = $deleter;
 	}
 
 	public function prePersist(LifecycleEventArgs $args)

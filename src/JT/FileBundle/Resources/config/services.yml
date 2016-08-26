@@ -1,9 +1,12 @@
 services:
     jt_file.uploader:
-        class: JT\FileBundle\Uploader;
+        class: JT\FileBundle\Uploader\FileUploader
+        
+    jt_file.deleter:
+        class: JT\FileBundle\Uploader\FileDeleter
 
-	jt_file.uploadable_file_listener:
+    jt_file.uploadable_file_listener:
         class: JT\FileBundle\EventListener
-        arguments: ["@jt_file.uploader"]
+        arguments: ["@jt_file.uploader", "@jt_file.deleter"]
 
 

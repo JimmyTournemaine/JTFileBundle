@@ -1,12 +1,12 @@
 <?php
-namespace JT\Filebundle\Uploader
+namespace JT\Filebundle\Uploader;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Filesystem\Filesystem;
+use JT\FileBundle\Model\UploadableFile;
 
 class FileDeleter
 {
-	private fileSystem;
+	private $fileSystem;
 
 	public function __construct(Filesystem $sys)
 	{

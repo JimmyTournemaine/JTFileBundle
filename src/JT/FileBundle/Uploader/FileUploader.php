@@ -1,7 +1,7 @@
 <?php
-namespace JT\Filebundle\Uploader
+namespace JT\Filebundle\Uploader;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use JT\FileBundle\Model\UploadableFile;
 
 class FileUploader
 {
