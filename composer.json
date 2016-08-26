@@ -20,7 +20,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.6.0",
-        "symfony/symfony": "3.0.*",
+        "symfony/symfony": "^3",
         "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
@@ -30,7 +30,7 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "hwi/oauth-bundle": "~0.4@dev",
-	"knplabs/knp-menu-bundle": "*@dev",
+	"knplabs/knp-menu-bundle": "^2.1.2",
 	"friendsofsymfony/user-bundle": "~2.0@dev",
         "misd/phone-number-bundle": "^1.1",
         "adesigns/calendar-bundle": "2.0.x-dev",
@@ -38,12 +38,14 @@
         "willdurand/js-translation-bundle": "^2.5",
         "stof/doctrine-extensions-bundle": "^1.2",
         "friendsofsymfony/jsrouting-bundle": "^1.6",
-	"fungio/google-map-bundle": "*@dev",
-        "twig/extensions": "^1.3"
+	"fungio/google-map-bundle": "master",
+        "twig/extensions": "^1.3",
+        "jimmytournemaine/pre-mailer": "master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "doctrine/doctrine-fixtures-bundle": "^2.3"
     },
     "scripts": {
         "post-install-cmd": [

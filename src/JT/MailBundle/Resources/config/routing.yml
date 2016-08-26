@@ -1,3 +1,0 @@
-jt_mail_homepage:
-    path:     /
-    defaults: { _controller: JTMailBundle:Default:index }

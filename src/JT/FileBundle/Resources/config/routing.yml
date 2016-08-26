@@ -1,3 +1,0 @@
-jt_file_homepage:
-    path:     /
-    defaults: { _controller: JTFileBundle:Default:index }
