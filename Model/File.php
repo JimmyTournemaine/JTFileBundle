@@ -3,7 +3,11 @@ namespace JT\FileBundle\Model;
 
 use Symfony\Component\HttpFoundation\File\File;
 
+<<<<<<< HEAD
 abstract class File implements UploadableFile
+=======
+class File implements UploadableFile
+>>>>>>> ad591436b40a24ad124f92f9b9ce4ad77bf3920c
 {
 	protected $originalName;
 	protected $filename;
@@ -42,9 +46,14 @@ abstract class File implements UploadableFile
 			return $this->file;
 		}
 
+<<<<<<< HEAD
 		return $this->file = new File($this->getAbsolutePathname(), true);
 	}
 
+=======
+		return $this->file = new File($this->getAbsolutePathname(), true)
+	}
+>>>>>>> ad591436b40a24ad124f92f9b9ce4ad77bf3920c
 }
 
 

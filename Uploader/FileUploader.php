@@ -1,7 +1,13 @@
 <?php
+<<<<<<< HEAD
 namespace JT\Filebundle\Uploader;
 
 use JT\FileBundle\Model\UploadableFile;
+=======
+namespace JT\Filebundle\Uploader
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+>>>>>>> ad591436b40a24ad124f92f9b9ce4ad77bf3920c
 
 class FileUploader
 {
