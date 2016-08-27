@@ -4,7 +4,7 @@
 	"type": "bundle",
 	"description": "File handling by doctrine listener",
 	"autoload": {
-		"psr-4": { "JT\\FileBundle": "" }
+		"psr-4": { "JT\\FileBundle\\": "" }
 	},
 	"require": {
 		"php": ">=5.5.9",
