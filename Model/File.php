@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\File\File;
 
 abstract class File implements UploadableFile
 {
+	protected $id;
 	protected $originalName;
 	protected $filename;
 	protected $file;
@@ -12,6 +13,11 @@ abstract class File implements UploadableFile
 	public function getAbsolutePathname()
 	{
 		return $this->getTargetDirectory() . '/' . $this->getFilename();
+	}
+
+	public function getId()
+	{
+		return $this->id;
 	}
 
 	public function setOriginalName($name)
