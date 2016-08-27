@@ -1,0 +1,20 @@
+{
+	"name": "jimmytournemaine/file-bundle",
+	"license": "MIT",
+	"type": "bundle",
+	"description": "File handling by doctrine listener",
+	"autoload": {
+		"psr-4": { "JT\\FileBundle" }
+	},
+	"require": {
+		"php": ">=5.5.9",
+		"symfony/symfony": ">=2.6",
+	},
+	"authors": [
+		{
+			"name": "Jimmy Tournemaine",
+			"email": "jimmy.tournemaine@yahoo.fr",
+			"role": "Developer"
+		}
+	]
+}
