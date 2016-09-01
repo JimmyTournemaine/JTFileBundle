@@ -6,8 +6,9 @@ use JT\FileBundle\Model\File as BaseFile;
 
 /**
  * @ORM\MappedSuperclass
+ * @ORM\HasLifecycleCallbacks
  */
-class File extends BaseFile
+abstract class File extends BaseFile
 {
 	/**
 	 * @ORM\Column(name="original")

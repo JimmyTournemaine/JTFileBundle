@@ -2,50 +2,56 @@
 namespace JT\FileBundle\EventListener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use JT\Filebundle\Uploader\FileDeleter;
-use JT\Filebundle\Uploader\FileUploader;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
+use JT\FileBundle\Uploader\FileUploader;
+use Doctrine\Common\EventSubscriber;
+use Doctrine\ORM\Events;
+use JT\FileBundle\Model\UploadableFile;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class FileToUploadListener
+class FileToUploadListener implements EventSubscriber
 {
 	private $uploader;
-	private $deleter;
 
-	public function __construct(FileUploader $uploader, FileDeleter $deleter)
+	public function __construct(FileUploader $uploader)
 	{
 		$this->uploader = $uploader;
-		$this->deleter = $deleter;
+	}
+
+	public function getSubscribedEvents()
+	{
+	    return array(Events::prePersist, Events::preUpdate, Events::preRemove, Events::preRemove);
 	}
 
 	public function prePersist(LifecycleEventArgs $args)
 	{
 		$entity = $args->getEntity();
-		if(!$entity instanceof FileInterface) {
+		if(!$entity instanceof UploadableFile) {
 			return;
+		}
+		$this->uploader->upload($entity);
+	}
+
+	public function preUpdate(LifecycleEventArgs $args)
+	{
+		$entity = $args->getEntity();
+		if(!$entity instanceof UploadableFile) {
+			return;
+		}
+		if (!$entity->getFile() instanceof UploadedFile){
+		    return;
 		}
 
 		$this->uploader->upload($entity);
 	}
 
-	public function preUpdate(PreUpdateEventArgs $args)
+	public function preRemove(LifecycleEventArgs $args)
 	{
 		$entity = $args->getEntity();
-		if(!$entity instanceof FileInterface) {
+		if(!$entity instanceof UploadableFile) {
 			return;
 		}
 
-		$this->uploader->upload($entity);		
-	}
-
-	public function postRemove(LifecycleEventArgs $args)
-	{
-		$entity = $args->getEntity();
-		$entity = $args->getEntity();
-		if(!$entity instanceof FileInterface) {
-			return;
-		}
-
-		$this->uploader->remove($entity);
+		$this->uploader->delete($entity);
 	}
 
 }

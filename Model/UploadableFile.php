@@ -34,7 +34,7 @@ interface UploadableFile
 	/**
 	 * Get the absolute pathname
 	 */
-	public function getAbsolutePathname();
+	public function getWebPathname();
 }
 
 

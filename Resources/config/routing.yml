@@ -1,0 +1,4 @@
+
+download:
+    path:     /download
+    defaults: { _controller: JTFileBundle:File:download }

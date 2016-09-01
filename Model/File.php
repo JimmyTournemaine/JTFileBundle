@@ -1,8 +1,6 @@
 <?php
 namespace JT\FileBundle\Model;
 
-use Symfony\Component\HttpFoundation\File\File;
-
 abstract class File implements UploadableFile
 {
 	protected $id;
@@ -10,7 +8,12 @@ abstract class File implements UploadableFile
 	protected $filename;
 	protected $file;
 
-	public function getAbsolutePathname()
+	public function __toString()
+	{
+	    return $this->originalName;
+	}
+
+	public function getWebPathname()
 	{
 		return $this->getTargetDirectory() . '/' . $this->getFilename();
 	}
@@ -44,11 +47,13 @@ abstract class File implements UploadableFile
 
 	public function getFile()
 	{
-		if($this->file !== null){
-			return $this->file;
-		}
+		return $this->file;
+	}
 
-		return $this->file = new File($this->getAbsolutePathname(), true);
+	public function setFile(\Symfony\Component\HttpFoundation\File\File $file)
+	{
+	    $this->file = $file;
+	    return $this;
 	}
 
 }
