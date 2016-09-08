@@ -1,5 +1,5 @@
 <?php
-namespace JTFileBundle\Form\Type;
+namespace JT\FileBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
